@@ -51,3 +51,29 @@ Install required packages:
 
 ```bash
 pip install tensorflow tensorflow-io librosa kagglehub scikit-learn numpy
+
+## Code Attribution
+
+### Written by Me
+- `load_dataset` function (data loading and labeling)
+- CNN model architecture
+- Training and evaluation pipeline
+- train/validation/test split
+
+### Adapted from Prior Code
+- Audio preprocessing functions:
+  - `load_audio`
+  - `extract_log_mel`
+  - `normalize`
+- These were modified to:
+  - Ensure fixed-length audio clips
+  - Standardize feature scaling
+  - Integrate cleanly into the training pipeline
+
+### Modifications Made (with Specific Changes)
+
+- These were modified to:
+  - Ensure fixed-length audio clips
+  - Standardize feature scaling
+  - Integrate cleanly into the training pipeline
+
