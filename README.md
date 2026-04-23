@@ -1,57 +1,53 @@
-Capuchin Bird Call Classification
-Overview
+# Capuchin Bird Call Classification
 
-This project implements a binary audio classification system that distinguishes between capuchin bird calls and non-capuchin sounds using a Convolutional Neural Network (CNN). Audio clips are converted into log-mel spectrograms, which are treated as image inputs for the model.
+## Overview
 
-The pipeline includes dataset downloading, preprocessing, feature extraction, model training, and evaluation.
+This project builds a binary audio classifier to distinguish between **capuchin bird calls** and **non-capuchin sounds** using a Convolutional Neural Network (CNN). Audio clips are converted into log-mel spectrograms, which are treated as image inputs for classification.
 
-Code Structure
+---
 
-The code is organized into the following sections:
+## Code Structure
 
-Setup & Dependencies
-Installs required libraries (TensorFlow, librosa, kagglehub).
-Imports
-Loads all necessary Python packages for audio processing, machine learning, and evaluation.
-Dataset Download
-Automatically downloads the dataset using kagglehub.
-Defines paths for:
-Capuchin audio clips
-Non-capuchin audio clips
-Audio Configuration
-Sets sampling rate (16 kHz)
-Fixes audio clip duration (3 seconds)
-Audio Preprocessing
-load_audio: Loads and pads/truncates audio
-extract_log_mel: Converts audio to log-mel spectrogram
-normalize: Standardizes feature values
-Dataset Construction
-load_dataset:
-Loads all audio files
-Converts them into spectrograms
-Assigns labels:
-1 = capuchin
-0 = not capuchin
-Data Preparation
-Shuffles dataset
-Resizes spectrograms to (128, 128)
-Splits into:
-Training set
-Validation set
-Test set
-Model Definition
-CNN with:
-3 convolutional layers
-Batch normalization
-Max pooling
-Fully connected layers
-Dropout for regularization
-Training
-Uses:
-Early stopping
-Learning rate reduction
-Evaluation
-Outputs:
-Confusion matrix
-Classification report
-Test accuracy
+The code is organized into the following components:
+
+- **Setup & Imports**  
+  Installs and loads required libraries (TensorFlow, librosa, kagglehub, etc.).
+
+- **Dataset Download**  
+  Automatically downloads the dataset and defines paths for capuchin and non-capuchin audio clips.
+
+- **Audio Preprocessing**
+  - `load_audio`: Loads and standardizes audio length  
+  - `extract_log_mel`: Converts audio to spectrogram  
+  - `normalize`: Scales features for stable training  
+
+- **Dataset Construction**
+  - `load_dataset`: Loads audio files, converts to spectrograms, assigns labels  
+    - 1 = capuchin  
+    - 0 = not capuchin  
+
+- **Data Preparation**
+  - Shuffles dataset  
+  - Resizes inputs to (128, 128)  
+  - Splits into train, validation, and test sets  
+
+- **Model**
+  - CNN with convolutional layers, batch normalization, pooling, and dropout  
+
+- **Training**
+  - Uses early stopping and learning rate scheduling  
+
+- **Evaluation**
+  - Outputs confusion matrix, classification report, and test accuracy  
+
+- **Saving**
+  - Saves trained model as `capuchin_classifier.h5`  
+
+---
+
+## Dependencies
+
+Install required packages:
+
+```bash
+pip install tensorflow tensorflow-io librosa kagglehub scikit-learn numpy
