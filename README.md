@@ -38,7 +38,7 @@ The code is organized into the following components:
   - Uses early stopping and learning rate scheduling  
 
 - **Evaluation**
-  - Outputs confusion matrix, classification report, and test accuracy  
+  - Outputs test accuracy  
 
 - **Saving**
   - Saves trained model as `capuchin_classifier.h5`  
