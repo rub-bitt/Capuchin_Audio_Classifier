@@ -44,14 +44,6 @@ The code is organized into the following components:
   - Saves trained model as `capuchin_classifier.h5`  
 
 ---
-
-## Dependencies
-
-Install required packages:
-
-```bash
-pip install tensorflow tensorflow-io librosa kagglehub scikit-learn numpy
-
 ## Code Attribution
 
 ### Written by Me
@@ -76,4 +68,13 @@ pip install tensorflow tensorflow-io librosa kagglehub scikit-learn numpy
   - Ensure fixed-length audio clips
   - Standardize feature scaling
   - Integrate cleanly into the training pipeline
+
+## Dependencies
+
+Install required packages:
+
+```bash
+pip install tensorflow tensorflow-io librosa kagglehub scikit-learn numpy
+
+
 
