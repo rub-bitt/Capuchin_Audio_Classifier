@@ -57,10 +57,6 @@ The code is organized into the following components:
   - `load_audio`
   - `extract_log_mel`
   - `normalize`
-- These were modified to:
-  - Ensure fixed-length audio clips
-  - Standardize feature scaling
-  - Integrate cleanly into the training pipeline
 
 ### Modifications Made (with Specific Changes)
 
